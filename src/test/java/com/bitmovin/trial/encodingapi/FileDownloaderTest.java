@@ -1,6 +1,6 @@
 package com.bitmovin.trial.encodingapi;
 
-import com.bitmovin.trial.encodingapi.downloadmanager.FileDownloader;
+import com.bitmovin.trial.encodingapi.downloadmanager.FileDownloaderHTTP;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class FileDownloaderTest {
     public void getFileSizeTest() throws IOException {
 
         URL url = new URL("http://speed.hetzner.de/100MB.bin");
-        int result = FileDownloader.getFileSize(url);
+        int result = FileDownloaderHTTP.getFileSize(url);
 
         assertNotNull(result, "Size calculated");
     }

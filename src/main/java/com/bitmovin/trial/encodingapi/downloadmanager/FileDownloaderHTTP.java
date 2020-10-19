@@ -14,7 +14,7 @@ import java.net.URLConnection;
  * User: sini_ann
  * Date: 17/10/20 11:13 PM
  */
-public class FileDownloader {
+public class FileDownloaderHTTP {
     static URL url;
     static int sourceFileSize;
     static String localFilePath;
@@ -30,7 +30,7 @@ public class FileDownloader {
     }
 
     // Task 2.a
-    public static void fileDownloadImplementation()
+    public void fileDownloadImplementation()
             throws IOException {
 
         String[] temp = url.toString().split("/");
@@ -78,7 +78,7 @@ public class FileDownloader {
     }
 
     // Task 2.b
-    public static void fileDownloadUsingAPI() throws Exception {
+    public void fileDownloadUsingAPI() throws Exception {
         System.out.println(".........................................................");
         System.out.println("File download & monitoring with Apache Commons IO library");
         File folder = new File(System.getProperty("user.dir") + "/temp");
@@ -128,7 +128,7 @@ public class FileDownloader {
     }
 
 
-    public static void seeProgress(FileOutputStream fout) throws IOException {
+    public void seeProgress(FileOutputStream fout) throws IOException {
         long percent = 100 - (sourceFileSize - fout.getChannel().size()) * 100 / (long) sourceFileSize;
         System.out.println("Downloaded " + percent + "%");
     }
