@@ -18,7 +18,7 @@ public class EncodingApiApplication {
 		List<Encoding> list = enc.get100EncodingList();
 		enc.sortEncodingsByPriority(list);
 
-		FileDownloader.fileDownloadImplementation("http://speed.hetzner.de/100MB.bin");
+		FileDownloader.fileDownloadImplementation();
 		FileDownloader.fileDownloadUsingAPI();
 
 	}

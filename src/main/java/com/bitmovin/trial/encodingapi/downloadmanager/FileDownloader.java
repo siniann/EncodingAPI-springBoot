@@ -29,43 +29,39 @@ public class FileDownloader {
         }
     }
 
-
-    public static void fileDownloadImplementation(String urlString)
+    // Task 2.a
+    public static void fileDownloadImplementation()
             throws IOException {
 
-        if (urlString.isEmpty() || urlString.length() == 0) {
-            throw new IllegalArgumentException("Invalid URL");
-        }
-        String[] temp = urlString.split("/");
+        String[] temp = url.toString().split("/");
         if (temp.length == 0) {
             throw new IllegalArgumentException("Invalid URL");
         }
-        System.out.println(".........................................................");
         String filename = temp[temp.length - 1];
+        System.out.println(".........................................................");
 
         File directory = new File(localFilePath);
-        // add new folder if it does not exist
+        // add new folder temp, if it does not exist
         if (!directory.exists()) {
             boolean created = directory.mkdir();
             if (created)
                 System.out.println("Folder created at" + localFilePath);
         }
+
         String localDownloadPath = localFilePath + "/" + filename;
         BufferedInputStream in = null;
         FileOutputStream fout = null;
         System.out.println("Downloading file to : " + localDownloadPath);
-
         try {
             InputStream is = url.openStream();
             in = new BufferedInputStream(is);
             fout = new FileOutputStream(localDownloadPath);
             final byte data[] = new byte[1024];
             int count;
-
-            int timer = 2500;
+            int timer = 0;
             while ((count = in.read(data, 0, 1024)) != -1) {
                 timer++;
-                if (timer % 2500 == 0) {
+                if (timer % 3500 == 0) {
                     seeProgress(fout);
                 }
                 fout.write(data, 0, count);
@@ -81,7 +77,7 @@ public class FileDownloader {
         }
     }
 
-
+    // Task 2.b
     public static void fileDownloadUsingAPI() throws Exception {
         System.out.println(".........................................................");
         System.out.println("File download & monitoring with Apache Commons IO library");
@@ -128,7 +124,6 @@ public class FileDownloader {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
 
     }
 

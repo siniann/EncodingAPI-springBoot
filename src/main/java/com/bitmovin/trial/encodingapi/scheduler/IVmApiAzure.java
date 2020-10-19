@@ -9,6 +9,7 @@ import java.util.UUID;
  * User: sini_ann
  * Date: 17/10/20 10:12 pm
  */
+// Task 3
 public class IVmApiAzure implements IVmApi {
 
     private List<String> azureInstances = new ArrayList<>();
@@ -63,7 +64,7 @@ public class IVmApiAzure implements IVmApi {
                 return;
             }
         }
-        System.out.println("Deleted Azure Instance with id: " +id);
+        System.out.println("No instance with id " + id +" available to delete");
         System.out.println("...............................");
 
 

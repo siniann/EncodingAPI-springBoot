@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
  * User: sini_ann
  * Date: 19/10/20 5:52 pm
  */
+// Task 4 tests
 public class RestTest extends AbstractTest {
 
     @Override

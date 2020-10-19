@@ -8,6 +8,7 @@ import java.util.UUID;
  * User: sini_ann
  * Date: 17/10/20 10:12 pm
  */
+// Task 3
 public class IVmApiGoogle implements IVmApi{
 
     private List<String> googleInstances = new ArrayList<>();
@@ -30,7 +31,7 @@ public class IVmApiGoogle implements IVmApi{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Acquired Google Instance");
+
 
         String id = UUID.randomUUID().toString();
         System.out.println("Acquired Azure Instance with id: " +id);
@@ -57,7 +58,7 @@ public class IVmApiGoogle implements IVmApi{
                 return;
             }
         }
-        System.out.println("Deleted Google Instance with id: " +id);
+        System.out.println("No instance with id " + id +" available to delete");
         System.out.println("...............................");
 
 

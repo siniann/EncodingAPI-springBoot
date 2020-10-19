@@ -87,34 +87,6 @@ public class IVmApiTest {
 
     }
 
-
-    @Test
-    public void deleteGoogleTest() {
-        IVmApiGoogle google = new IVmApiGoogle();
-        ArrayList<String> str = new ArrayList<String>();
-        str.add("id1");
-        str.add("id2");
-        str.add("id3");
-
-        google.setGoogleInstances(str);
-        assertEquals(3, google.getGoogleInstances().size(), "Total instance initialized to 3");
-
-        google.delete("id2");
-        assertEquals(2, google.getGoogleInstances().size(), "Total instance after start : 2");
-
-
-        google.delete("aaaa");
-        assertEquals(2, google.getGoogleInstances().size(), " Instance List remain unchanged for invalid id");
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            google.delete(null);
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            google.delete("");
-        });
-
-    }
-
     @Test
     public void deleteAzureTest() {
         IVmApiAzure azure = new IVmApiAzure();
@@ -142,5 +114,31 @@ public class IVmApiTest {
 
     }
 
+    @Test
+    public void deleteGoogleTest() {
+        IVmApiGoogle google = new IVmApiGoogle();
+        ArrayList<String> str = new ArrayList<String>();
+        str.add("id1");
+        str.add("id2");
+        str.add("id3");
+
+        google.setGoogleInstances(str);
+        assertEquals(3, google.getGoogleInstances().size(), "Total instance initialized to 3");
+
+        google.delete("id2");
+        assertEquals(2, google.getGoogleInstances().size(), "Total instance after start : 2");
+
+
+        google.delete("aaaa");
+        assertEquals(2, google.getGoogleInstances().size(), " Instance List remain unchanged for invalid id");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            google.delete(null);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            google.delete("");
+        });
+
+    }
 
 }

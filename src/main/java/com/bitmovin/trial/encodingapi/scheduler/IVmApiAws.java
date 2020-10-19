@@ -9,7 +9,7 @@ import java.util.UUID;
  * User: sini_ann
  * Date: 17/10/20 10:10 pm
  */
-
+// Task 3
 public class IVmApiAws implements IVmApi {
 
     private List<String> awsInstances = new ArrayList<>();

@@ -13,6 +13,7 @@ import java.util.UUID;
  * User: sini_ann
  * Date: 17/10/20 7:10 PM
  */
+// Task 4
 @RestController
 public class EncodingRestController {
     private static List<EncodingRest> encodingRepo = new ArrayList<>();

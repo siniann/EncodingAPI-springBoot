@@ -11,26 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * User: sini_ann
  * Date: 16/10/20 5:42 PM
  */
+// Task 1.c
 public class EncodingTests {
-    @Test
-    public void get100EncodingListShouldReturnListOfSize100() {
-        Encoding tester = new Encoding(); // Encoding is tested
-        List<Encoding> testList = tester.get100EncodingList();
-
-        assertNotNull(testList);
-        assertEquals(100, testList.size() ,"Size of list must be 100");
-    }
-
-    @Test()
-    public void sortingWithNoParametersShouldThrowIllegalArgumentException() {
-        Encoding tester = new Encoding(); // Encoding is tested
-        // empty ArrayList
-        List<Encoding> testList  = new ArrayList<>();
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            tester.sortEncodingsByPriority(testList);
-        });
-    }
 
     @Test
     public void sortEncodingsByPriorityDescendingTest() {
@@ -53,6 +35,23 @@ public class EncodingTests {
         assertEquals(7, sortedlist.get(2).getPriority() ,"Smallest priority should be stored last");
     }
 
+    @Test
+    public void get100EncodingListShouldReturnListOfSize100() {
+        Encoding tester = new Encoding(); // Encoding is tested
+        List<Encoding> testList = tester.get100EncodingList();
 
+        assertNotNull(testList);
+        assertEquals(100, testList.size() ,"Size of list must be 100");
+    }
 
+    @Test()
+    public void sortingWithNoParametersShouldThrowIllegalArgumentException() {
+        Encoding tester = new Encoding(); // Encoding is tested
+        // empty ArrayList
+        List<Encoding> testList  = new ArrayList<>();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            tester.sortEncodingsByPriority(testList);
+        });
+    }
 }
